@@ -13,8 +13,8 @@
         <nav>
             <ul>
                 <li><a href="#about">Products</a></li>
-                <li><a href="#projects">About Company</a></li>
-                <li><a href="#contact">Contact us</a></li>
+                <li><a href="#projects">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="forum.html">Forum</a></li>
             </ul>
         </nav>
@@ -66,37 +66,34 @@
                         const fileName = this.files.length > 0 ? this.files[0].name : 'No file chosen';
                         document.getElementById('file-name').textContent = fileName;
                 
-                        // Preview the selected image
+                       
                         const file = this.files[0];
                         const imgPreview = document.getElementById('img-preview');
                 
                         if (file) {
                             const reader = new FileReader();
-                            
-                            // Check if the file is an image
                             if (file.type.startsWith('image/')) {
                                 reader.onload = function(e) {
-                                    imgPreview.src = e.target.result; // Set the src of the image to the result
-                                    imgPreview.style.display = 'block'; // Show the image preview
+                                    imgPreview.src = e.target.result;
+                                    imgPreview.style.display = 'block';
                                 }
-                                reader.readAsDataURL(file); // Read the file as a data URL
+                                reader.readAsDataURL(file);
                             } else {
-                                // If not an image, show a blank square
-                                imgPreview.src = ''; // Clear the src
-                                imgPreview.style.display = 'block'; // Show the blank square
-                                imgPreview.style.backgroundColor = 'white'; // Set background to white
-                                imgPreview.alt = ''; // Update alt text
+                                imgPreview.src = '';
+                                imgPreview.style.display = 'block';
+                                imgPreview.style.backgroundColor = 'white';
+                                imgPreview.alt = '';
                             }
                         } else {
-                            imgPreview.style.display = 'none'; // Hide if no file is chosen
+                            imgPreview.style.display = 'none';
                         }
                     });
                 </script>
                 <br><br>
 
-                <input type="submit" value="Submit requisition">
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for "agreement">I agree to the processing of personal data.</label>
+                <label for "agreement">I agree to the processing of personal data.</label><br>
+                <input type="submit" value="Submit Requisition">
             </form>
             <h2>You can also find us here:</h2>
             <a href="mailto:aetherisoftware@yandex.com" class="contact-link">Email: aetherisoftware@yandex.com</a><br>
