@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheris</title>
+    <link rel="icon" href="realogo.png" type="image/png" >
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">Products</a></li>
+                <li><a href="#projects">About Company</a></li>
+                <li><a href="#contact">Contact us</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="motto-container">
+            <img src="realogo.png" alt="logo" class="motto-image">
+            <p class="motto">AETHERIS SOFTWARE</p>
+        </div>
+        <section id="product">
+            <h1>Product 1</h1>
+            <h2>Additional info</h2>
+            <table>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Requirements</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Product 1</td>
+                    <td>Description</td>
+                    <td>10$</td>
+                </tr>
+            </table>
+        </section>
+        <section id="contact">
+            <h2>Contact us</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="full-name">Full Name:</label><br>
+                <input type="text" id="full-name" name="full-name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <label for="attachments">Attachments:</label><br>
+                <div class="custom-file-upload">
+                    <input type="file" id="attachments" name="attachments">
+                    <button onclick="document.getElementById('attachments').click();">Choose File</button>
+                </div>
+                
+                <img id="img-preview" alt="">
+                <div class="file-name" id="file-name"></div>
+                <script>
+                    document.getElementById('attachments').addEventListener('change', function() {
+                        const fileName = this.files.length > 0 ? this.files[0].name : 'No file chosen';
+                        document.getElementById('file-name').textContent = fileName;
+                
+                        // Preview the selected image
+                        const file = this.files[0];
+                        const imgPreview = document.getElementById('img-preview');
+                
+                        if (file) {
+                            const reader = new FileReader();
+                            
+                            // Check if the file is an image
+                            if (file.type.startsWith('image/')) {
+                                reader.onload = function(e) {
+                                    imgPreview.src = e.target.result; // Set the src of the image to the result
+                                    imgPreview.style.display = 'block'; // Show the image preview
+                                }
+                                reader.readAsDataURL(file); // Read the file as a data URL
+                            } else {
+                                // If not an image, show a blank square
+                                imgPreview.src = ''; // Clear the src
+                                imgPreview.style.display = 'block'; // Show the blank square
+                                imgPreview.style.backgroundColor = 'white'; // Set background to white
+                                imgPreview.alt = ''; // Update alt text
+                            }
+                        } else {
+                            imgPreview.style.display = 'none'; // Hide if no file is chosen
+                        }
+                    });
+                </script>
+                <br><br>
+
+                <input type="submit" value="Submit requisition">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for "agreement">I agree to the processing of personal data.</label>
+            </form>
+            <h2>You can also find us here:</h2>
+            <a href="mailto:aetherisoftware@yandex.com" class="contact-link">Email: aetherisoftware@yandex.com</a><br>
+            <a href ="https://t.me/aetherisoftware_bot" class="contact-link">Telegram: @aetherisoftware_bot</a><br>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aetheris Software. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
