@@ -5,7 +5,7 @@
 .motto-container {
     width: 34%;
     border: 2px solid #273657;
-    padding-left: 3px;
+    padding-left: 5px;
     padding-right: -2px;
     padding-top: 2px;
     padding-bottom: 2px; 
@@ -19,14 +19,13 @@
 
 .motto-image {
     margin-right: 15px;
-    width: 70px; 
-    height: 70px;
+    width: 75px; 
+    height: 75px;
 }
 
 .motto {
     color: #273657;
     font-family: 'Roboto', sans-serif;
-    text-align: center;
     font-size: 30px; 
     line-height: 1.2; 
     font-weight: bold;
@@ -36,7 +35,7 @@
 @media (max-width: 600px) {
     .motto-container {
         width: 95%; 
-        padding-left: 3px; 
+        padding-left: 10px; 
         padding-right: 10px;
         margin: 10px auto; 
         display: flex;
